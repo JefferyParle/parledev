@@ -15,6 +15,16 @@ Use trunk-based development with short-lived branches.
 - Open pull requests into `main` so Vercel preview deployments can be reviewed before production.
 - Direct commits to `main` are only for very small copy or config fixes.
 
+## Multi-Agent Coordination
+
+- Before editing, identify the intended file scope and keep changes inside that scope.
+- Do not revert, overwrite, or reformat unrelated work.
+- If another agent or user has modified a file, read the current file before editing and preserve their changes.
+- Prefer small, focused commits that match the requested task.
+- Do not add dependencies unless the task clearly needs them and existing project tools are insufficient.
+- Preserve the visual direction in `docs/styleguide.md` and content strategy in `docs/content-plan.md` unless explicitly asked to change them.
+- Do not deploy, push to `main`, or change Vercel/GitHub settings unless explicitly requested.
+
 ## Validation
 
 Before merging or pushing meaningful implementation changes, run:

@@ -13,6 +13,7 @@ Use trunk-based development with short-lived branches.
 - Use `fix/...` for bug fixes.
 - Use `chore/...` for docs, config, and dependency cleanup.
 - Open pull requests into `main` so Vercel preview deployments can be reviewed before production.
+- Do not prefix pull request titles with agent labels like `[codex]`; use a clear, human-readable title instead.
 - Direct commits to `main` are only for very small copy or config fixes.
 
 ## Multi-Agent Coordination

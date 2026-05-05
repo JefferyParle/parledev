@@ -166,6 +166,12 @@ const certifications = [
   "The Web Developer Bootcamp 2023 - Udemy",
 ];
 
+const contactLinks = {
+  email: "mailto:jefferyparledev@gmail.com",
+  linkedin: "https://www.linkedin.com/in/jefferyparle/",
+  github: "https://github.com/JefferyParle",
+} as const;
+
 function SectionHeader({
   eyebrow,
   title,
@@ -247,7 +253,7 @@ export default function Home() {
           </div>
           <a
             className="inline-flex h-10 items-center gap-2 border border-cyber-cyan/50 px-3 font-mono text-[11px] font-bold uppercase tracking-[0.16em] text-cyber-cyan transition hover:border-cyber-yellow hover:text-cyber-yellow"
-            href="mailto:jeffparledev@gmail.com"
+            href={contactLinks.email}
           >
             <Mail aria-hidden="true" className="size-4" />
             Ping
@@ -276,11 +282,11 @@ export default function Home() {
               measurable conversion gains, and production-aware delivery.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
-              <LinkButton href="mailto:jeffparledev@gmail.com" icon={Mail}>
+              <LinkButton href={contactLinks.email} icon={Mail}>
                 Contact Jeffery
               </LinkButton>
               <LinkButton
-                href="https://www.linkedin.com/in/jefferyparle"
+                href={contactLinks.linkedin}
                 icon={ExternalLink}
                 variant="secondary"
               >
@@ -528,13 +534,13 @@ export default function Home() {
             </h2>
           </div>
           <div className="flex flex-wrap gap-3">
-            <a className="footer-button" href="mailto:jeffparledev@gmail.com">
+            <a className="footer-button" href={contactLinks.email}>
               <Mail aria-hidden="true" className="size-4" />
               Email
             </a>
             <a
               className="footer-button"
-              href="https://www.linkedin.com/in/jefferyparle"
+              href={contactLinks.linkedin}
               rel="noreferrer"
               target="_blank"
             >
@@ -543,7 +549,7 @@ export default function Home() {
             </a>
             <a
               className="footer-button"
-              href="https://github.com/jefferyparle/parledev"
+              href={contactLinks.github}
               rel="noreferrer"
               target="_blank"
             >

@@ -1,0 +1,216 @@
+@import "tailwindcss";
+
+:root {
+  --background: #050505;
+  --foreground: #f5f7f2;
+  --cyber-black: #050505;
+  --cyber-surface: #101015;
+  --cyber-panel: #15151a;
+  --cyber-paper: #f5f7f2;
+  --cyber-muted: #a7abb5;
+  --cyber-yellow: #fcee0a;
+  --cyber-cyan: #00f0ff;
+  --cyber-red: #ff003c;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-cyber-black: var(--cyber-black);
+  --color-cyber-surface: var(--cyber-surface);
+  --color-cyber-panel: var(--cyber-panel);
+  --color-cyber-paper: var(--cyber-paper);
+  --color-cyber-muted: var(--cyber-muted);
+  --color-cyber-yellow: var(--cyber-yellow);
+  --color-cyber-cyan: var(--cyber-cyan);
+  --color-cyber-red: var(--cyber-red);
+  --font-sans: "Geist", "Geist Fallback", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "Geist Mono", "Geist Mono Fallback", ui-monospace, monospace;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: "Geist", "Geist Fallback", ui-sans-serif, system-ui, sans-serif;
+}
+
+body::before {
+  pointer-events: none;
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  content: "";
+  background:
+    linear-gradient(rgba(252, 238, 10, 0.025) 50%, transparent 50%),
+    linear-gradient(
+      90deg,
+      rgba(0, 240, 255, 0.03),
+      transparent 30%,
+      rgba(255, 0, 60, 0.025)
+    );
+  background-size: 100% 4px, 100% 100%;
+  mix-blend-mode: screen;
+}
+
+::selection {
+  background: var(--cyber-yellow);
+  color: var(--cyber-black);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.nav-link {
+  position: relative;
+  transition: color 180ms ease;
+}
+
+.nav-link::after {
+  position: absolute;
+  right: 0;
+  bottom: -8px;
+  left: 0;
+  height: 2px;
+  content: "";
+  transform: scaleX(0);
+  transform-origin: left;
+  background: var(--cyber-yellow);
+  transition: transform 180ms ease;
+}
+
+.nav-link:hover {
+  color: var(--cyber-yellow);
+}
+
+.nav-link:hover::after {
+  transform: scaleX(1);
+}
+
+.hud-button,
+.footer-button {
+  display: inline-flex;
+  min-height: 2.875rem;
+  align-items: center;
+  justify-content: center;
+  gap: 0.55rem;
+  border-radius: 2px;
+  padding: 0.75rem 1rem;
+  font-family: "Geist Mono", "Geist Mono Fallback", ui-monospace, monospace;
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  line-height: 1.2;
+  text-transform: uppercase;
+  transition:
+    transform 180ms ease,
+    border-color 180ms ease,
+    background 180ms ease,
+    color 180ms ease;
+}
+
+.hud-button:hover,
+.footer-button:hover {
+  transform: translateY(-2px);
+}
+
+.hud-button-primary {
+  border: 1px solid var(--cyber-yellow);
+  background: var(--cyber-yellow);
+  color: var(--cyber-black);
+  box-shadow: 6px 6px 0 var(--cyber-red);
+}
+
+.hud-button-secondary {
+  border: 1px solid rgba(0, 240, 255, 0.5);
+  background: rgba(0, 240, 255, 0.06);
+  color: var(--cyber-cyan);
+}
+
+.hud-button-secondary:hover {
+  border-color: var(--cyber-yellow);
+  color: var(--cyber-yellow);
+}
+
+.footer-button {
+  border: 1px solid var(--cyber-black);
+  background: var(--cyber-black);
+  color: var(--cyber-yellow);
+}
+
+.cyber-panel,
+.cyber-card,
+.cyber-timeline-item {
+  position: relative;
+  border-radius: 2px;
+  clip-path: polygon(
+    0 0,
+    calc(100% - 18px) 0,
+    100% 18px,
+    100% 100%,
+    18px 100%,
+    0 calc(100% - 18px)
+  );
+}
+
+.cyber-card {
+  border: 1px solid rgba(252, 238, 10, 0.24);
+  background:
+    linear-gradient(135deg, rgba(252, 238, 10, 0.08), transparent 34%),
+    rgba(21, 21, 26, 0.88);
+  padding: 1.5rem;
+  transition:
+    border-color 180ms ease,
+    transform 180ms ease,
+    box-shadow 180ms ease;
+}
+
+.cyber-card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(0, 240, 255, 0.6);
+  box-shadow: 0 0 36px rgba(0, 240, 255, 0.12);
+}
+
+.cyber-card::before,
+.cyber-timeline-item::before {
+  position: absolute;
+  top: 0;
+  right: 18px;
+  left: 0;
+  height: 2px;
+  content: "";
+  background: linear-gradient(90deg, var(--cyber-yellow), transparent);
+}
+
+.cyber-chip {
+  display: inline-flex;
+  border: 1px solid rgba(0, 240, 255, 0.3);
+  border-radius: 2px;
+  background: rgba(0, 240, 255, 0.05);
+  padding: 0.45rem 0.55rem;
+  font-family: "Geist Mono", "Geist Mono Fallback", ui-monospace, monospace;
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--cyber-cyan);
+}
+
+.cyber-visual::after {
+  position: absolute;
+  inset: 0;
+  content: "";
+  background:
+    linear-gradient(115deg, rgba(5, 5, 5, 0.12), rgba(5, 5, 5, 0.86) 65%),
+    repeating-linear-gradient(
+      0deg,
+      transparent 0 8px,
+      rgba(252, 238, 10, 0.08) 9px
+    );
+}
+
+.cyber-timeline-item {
+  border: 1px solid rgba(0, 240, 255, 0.24);
+  background: rgba(5, 5, 5, 0.5);
+  padding: 1.5rem;
+}

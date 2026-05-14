@@ -13,6 +13,7 @@ import {
   Terminal,
 } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
+import { Reveal } from "./components/Reveal";
 
 type Project = {
   title: string;
@@ -232,7 +233,7 @@ export default function Home() {
       <header className="sticky top-0 z-50 border-b border-cyber-yellow/20 bg-cyber-black/88 backdrop-blur-xl">
         <nav className="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 sm:px-8 lg:px-10">
           <a
-            className="font-mono text-sm font-black uppercase tracking-[0.28em] text-cyber-yellow"
+            className="signal-word font-mono text-sm font-black uppercase tracking-[0.28em] text-cyber-yellow"
             href="#top"
           >
             Parledev
@@ -263,23 +264,25 @@ export default function Home() {
 
       <section
         id="top"
-        className="relative isolate border-b border-cyber-yellow/20 px-5 pb-12 pt-10 sm:px-8 sm:pt-14 lg:px-10"
+        className="neon-field relative isolate border-b border-cyber-yellow/20 px-5 pb-12 pt-10 sm:px-8 sm:pt-14 lg:px-10"
       >
-        <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_18%_20%,rgba(0,240,255,0.18),transparent_28%),radial-gradient(circle_at_82%_14%,rgba(255,0,60,0.16),transparent_24%)]" />
         <div className="mx-auto grid max-w-7xl items-center gap-10 lg:min-h-[72svh] lg:grid-cols-[minmax(0,1fr)_440px]">
           <div>
-            <div className="mb-6 inline-flex items-center gap-3 border border-cyber-red/60 bg-cyber-red/10 px-3 py-2 font-mono text-xs font-bold uppercase tracking-[0.18em] text-cyber-red">
-              <RadioTower aria-hidden="true" className="size-4" />
+            <div className="signal-badge mb-6 inline-flex items-center gap-3 border border-cyber-red/60 bg-cyber-red/10 px-3 py-2 font-mono text-xs font-bold uppercase tracking-[0.18em] text-cyber-red">
+              <RadioTower aria-hidden="true" className="signal-icon size-4" />
               Frontend signal online
             </div>
             <h1 className="max-w-5xl text-balance text-5xl font-black uppercase leading-[0.92] text-cyber-paper sm:text-6xl lg:text-7xl">
               Jeffery Parle
-              <span className="block text-cyber-yellow">Software Engineer</span>
+              <span className="signal-headline block text-cyber-yellow">
+                Software Engineer
+              </span>
             </h1>
             <p className="mt-6 max-w-3xl text-pretty text-lg leading-8 text-cyber-muted sm:text-xl">
               Frontend-leaning engineer building React, TypeScript, Shopify,
-              and API-driven ecommerce tools for teams that need reliable UI,
-              measurable conversion gains, and production-aware delivery.
+              and API-driven ecommerce tools for teams that need{" "}
+              <span className="text-signal">reliable UI</span>, measurable
+              conversion gains, and production-aware delivery.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <LinkButton href={contactLinks.email} icon={Mail}>
@@ -300,7 +303,7 @@ export default function Home() {
 
           <div
             aria-label="Abstract neon interface background for the Parledev portfolio"
-            className="cyber-panel cyber-visual relative min-h-[420px] overflow-hidden border border-cyber-cyan/50 bg-[url('/neon-grid.png')] bg-cover bg-center p-5 shadow-[0_0_60px_rgba(0,240,255,0.18)]"
+            className="cyber-panel cyber-visual visual-pulse relative min-h-[420px] overflow-hidden border border-cyber-cyan/50 bg-[url('/neon-grid.png')] bg-cover bg-center p-5 shadow-[0_0_60px_rgba(0,240,255,0.18)]"
             role="img"
           >
             <div className="relative z-10 flex h-full min-h-[380px] flex-col justify-between">
@@ -309,7 +312,7 @@ export default function Home() {
                 <span>Phoenix AZ</span>
               </div>
               <div className="grid gap-3">
-                <div className="border-l-4 border-cyber-yellow bg-cyber-black/82 p-4 backdrop-blur">
+                <div className="signal-sweep border-l-4 border-cyber-yellow bg-cyber-black/82 p-4 backdrop-blur">
                   <p className="font-mono text-xs uppercase tracking-[0.2em] text-cyber-yellow">
                     Primary stack
                   </p>
@@ -318,7 +321,7 @@ export default function Home() {
                   </p>
                 </div>
                 <div className="grid grid-cols-2 gap-3">
-                  <div className="bg-cyber-black/82 p-4 backdrop-blur">
+                  <div className="signal-sweep bg-cyber-black/82 p-4 backdrop-blur">
                     <p className="font-mono text-[10px] uppercase tracking-[0.18em] text-cyber-muted">
                       Commerce
                     </p>
@@ -326,7 +329,7 @@ export default function Home() {
                       Shopify
                     </p>
                   </div>
-                  <div className="bg-cyber-black/82 p-4 backdrop-blur">
+                  <div className="signal-sweep bg-cyber-black/82 p-4 backdrop-blur">
                     <p className="font-mono text-[10px] uppercase tracking-[0.18em] text-cyber-muted">
                       Ops mode
                     </p>
@@ -354,15 +357,19 @@ export default function Home() {
 
       <section className="border-b border-cyber-yellow/20 bg-cyber-yellow text-cyber-black">
         <div className="mx-auto grid max-w-7xl grid-cols-2 divide-x divide-y divide-cyber-black/20 px-5 sm:px-8 md:grid-cols-4 md:divide-y-0 lg:px-10">
-          {metrics.map((metric) => (
-            <div key={metric.label} className="py-6 md:px-6">
-              <p className="font-mono text-3xl font-black uppercase">
+          {metrics.map((metric, index) => (
+            <Reveal
+              className="py-6 md:px-6"
+              delay={index * 70}
+              key={metric.label}
+            >
+              <p className="metric-value font-mono text-3xl font-black uppercase">
                 {metric.value}
               </p>
               <p className="mt-2 max-w-[14rem] text-xs font-bold uppercase tracking-[0.16em]">
                 {metric.label}
               </p>
-            </div>
+            </Reveal>
           ))}
         </div>
       </section>
@@ -374,8 +381,13 @@ export default function Home() {
           copy="The strongest portfolio story is not just the stack. It is the work behind pricing autonomy, partner visibility, international storefront migration, and measurable funnel improvements."
         />
         <div className="mx-auto grid max-w-7xl gap-5 lg:grid-cols-3">
-          {projects.map((project) => (
-            <article className="cyber-card group" key={project.title}>
+          {projects.map((project, index) => (
+            <Reveal
+              as="article"
+              className="cyber-card group"
+              delay={index * 90}
+              key={project.title}
+            >
               <div className="flex items-start justify-between gap-4">
                 <div>
                   <p className="font-mono text-[11px] font-bold uppercase tracking-[0.24em] text-cyber-red">
@@ -411,7 +423,7 @@ export default function Home() {
                   </li>
                 ))}
               </ul>
-            </article>
+            </Reveal>
           ))}
         </div>
       </section>
@@ -427,11 +439,13 @@ export default function Home() {
         />
         <div className="mx-auto max-w-5xl">
           {experience.map((item, index) => (
-            <article
+            <Reveal
+              as="article"
               className="relative border-l border-cyber-yellow/40 pb-10 pl-7 last:pb-0"
+              delay={index * 90}
               key={`${item.company}-${item.role}`}
             >
-              <span className="absolute -left-[7px] top-1 size-3 bg-cyber-yellow shadow-[0_0_24px_rgba(252,238,10,0.7)]" />
+              <span className="timeline-signal absolute -left-[7px] top-1 size-3 bg-cyber-yellow shadow-[0_0_24px_rgba(252,238,10,0.7)]" />
               <div className="cyber-timeline-item">
                 <div className="flex flex-col justify-between gap-3 sm:flex-row sm:items-start">
                   <div>
@@ -458,7 +472,7 @@ export default function Home() {
                   ))}
                 </ul>
               </div>
-            </article>
+            </Reveal>
           ))}
         </div>
       </section>
@@ -474,7 +488,12 @@ export default function Home() {
             const Icon = group.icon;
 
             return (
-              <article className="cyber-card" key={group.title}>
+              <Reveal
+                as="article"
+                className="cyber-card"
+                delay={skillGroups.indexOf(group) * 70}
+                key={group.title}
+              >
                 <Icon aria-hidden="true" className="size-7 text-cyber-cyan" />
                 <h3 className="mt-5 text-xl font-black uppercase text-cyber-paper">
                   {group.title}
@@ -486,13 +505,13 @@ export default function Home() {
                     </span>
                   ))}
                 </div>
-              </article>
+              </Reveal>
             );
           })}
         </div>
 
         <div className="mx-auto mt-16 grid max-w-7xl gap-5 lg:grid-cols-[0.8fr_1.2fr]">
-          <div className="cyber-panel border border-cyber-red/50 bg-cyber-red/10 p-6">
+          <Reveal className="cyber-panel border border-cyber-red/50 bg-cyber-red/10 p-6">
             <MapPin aria-hidden="true" className="size-7 text-cyber-red" />
             <h3 className="mt-5 text-2xl font-black uppercase text-cyber-paper">
               Phoenix-based frontend engineer
@@ -501,22 +520,26 @@ export default function Home() {
               Available for frontend, ecommerce, platform UI, and developer-tool
               work where React, TypeScript, and clear delivery judgment matter.
             </p>
-          </div>
-          <div className="cyber-panel border border-cyber-cyan/40 bg-cyber-black/60 p-6">
+          </Reveal>
+          <Reveal
+            className="cyber-panel border border-cyber-cyan/40 bg-cyber-black/60 p-6"
+            delay={100}
+          >
             <p className="font-mono text-xs font-bold uppercase tracking-[0.24em] text-cyber-cyan">
               Certification trace
             </p>
             <div className="mt-5 grid gap-3 md:grid-cols-2">
-              {certifications.map((cert) => (
-                <div
+              {certifications.map((cert, index) => (
+                <Reveal
                   className="border border-cyber-yellow/20 bg-cyber-yellow/[0.04] px-4 py-3 text-sm font-semibold text-cyber-paper/90"
+                  delay={index * 45}
                   key={cert}
                 >
                   {cert}
-                </div>
+                </Reveal>
               ))}
             </div>
-          </div>
+          </Reveal>
         </div>
       </section>
 

@@ -8,7 +8,7 @@ Source inspiration: [Cyberpunk.net](https://www.cyberpunk.net/us/en/) current ho
 - Base: near-black surfaces with bright signal color accents.
 - Shape language: clipped corners, thin borders, terminal dividers, status tags, grid texture, and scanline overlays.
 - Layout: strong hero identity, metric strip, modular project cards, timeline logs, and skill matrix.
-- Motion: small hover translation and border-color changes only; readable professional portfolio first.
+- Motion: polished cyberpunk movement that supports the portfolio story. Use ambient neon drift, small signal pulses, scanline movement, scroll reveals, and text accents while keeping body copy stable and readable.
 
 ## Palette
 
@@ -42,5 +42,6 @@ The yellow/cyan/black direction is also consistent with widely referenced Cyberp
 
 - Keep body text on dark surfaces at high contrast.
 - Do not rely on neon color alone; labels and layout position carry meaning too.
-- Avoid persistent large animation. Scanlines are low-opacity and non-interactive.
+- Avoid persistent large animation that competes with content. Ambient motion must stay low-opacity, non-interactive, and compositor-friendly where possible.
+- Respect reduced-motion preferences by disabling or minimizing ambient movement, scroll reveals, and pulses.
 - CTA labels stay explicit: Contact, LinkedIn, View Work.

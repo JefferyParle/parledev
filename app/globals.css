@@ -309,7 +309,7 @@ html {
     radial-gradient(circle at 84% 78%, rgba(255, 0, 60, 0.12) 0 1px, transparent 2px);
   background-size: 100% 100%, 110px 110px, 150px 150px, 190px 190px;
   opacity: 0.9;
-  animation: neon-field-shift 24s linear infinite;
+  animation: neon-field-shift 32s ease-in-out infinite;
 }
 
 .reveal-motion {
@@ -339,12 +339,21 @@ html {
 }
 
 @keyframes neon-field-shift {
-  from {
+  0%,
+  100% {
     transform: translate3d(0, 0, 0);
   }
 
-  to {
-    transform: translate3d(2.5%, -1.5%, 0);
+  28% {
+    transform: translate3d(2.1%, -1.2%, 0) scale(1.01);
+  }
+
+  58% {
+    transform: translate3d(-1.4%, 1%, 0) scale(1.015);
+  }
+
+  82% {
+    transform: translate3d(1%, 1.6%, 0) scale(1.008);
   }
 }
 

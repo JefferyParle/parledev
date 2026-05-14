@@ -27,6 +27,13 @@ Use trunk-based development with short-lived branches.
 - Preserve the visual direction in `docs/styleguide.md` and content strategy in `docs/content-plan.md` unless explicitly asked to change them.
 - Do not deploy, push to `main`, or change Vercel/GitHub settings unless explicitly requested.
 
+## Accessibility
+
+- Keep static page text in the normal document flow with semantic HTML so screen readers can read it through standard browse/reading navigation.
+- Do not add `tabIndex` to non-interactive headings, paragraphs, cards, or decorative text just to make copy reachable by the Tab key. Reserve Tab order for links, buttons, form fields, and other real controls.
+- Do not wrap visible text-heavy UI in `role="img"` or replace it with a single `aria-label`; that can hide the individual text from assistive technology. Use image roles only for genuinely image-like visuals, and keep decorative imagery `aria-hidden` when appropriate.
+- Use landmarks, headings, lists, explicit link/button text, and `aria-hidden="true"` on decorative icons to preserve a clear screen-reader structure.
+
 ## Validation
 
 Before merging or pushing meaningful implementation changes, run:

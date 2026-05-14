@@ -274,7 +274,7 @@ export default function Home() {
             </div>
             <h1 className="max-w-5xl text-balance text-5xl font-black uppercase leading-[0.92] text-cyber-paper sm:text-6xl lg:text-7xl">
               Jeffery Parle
-              <span className="block text-cyber-yellow">Software Engineer II</span>
+              <span className="block text-cyber-yellow">Software Engineer</span>
             </h1>
             <p className="mt-6 max-w-3xl text-pretty text-lg leading-8 text-cyber-muted sm:text-xl">
               Frontend-leaning engineer building React, TypeScript, Shopify,
@@ -530,7 +530,7 @@ export default function Home() {
               Ready signal
             </p>
             <h2 className="mt-4 max-w-3xl text-balance text-4xl font-black uppercase leading-none sm:text-5xl">
-              Build the next storefront system with Jeffery.
+              Build the next Sitewide System with Jeffery.
             </h2>
           </div>
           <div className="flex flex-wrap gap-3">

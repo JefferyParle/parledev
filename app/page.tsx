@@ -302,9 +302,7 @@ export default function Home() {
           </div>
 
           <div
-            aria-label="Abstract neon interface background for the Parledev portfolio"
             className="cyber-panel cyber-visual visual-pulse relative min-h-[420px] overflow-hidden border border-cyber-cyan/50 bg-[url('/neon-grid.png')] bg-cover bg-center p-5 shadow-[0_0_60px_rgba(0,240,255,0.18)]"
-            role="img"
           >
             <div className="relative z-10 flex h-full min-h-[380px] flex-col justify-between">
               <div className="flex items-center justify-between font-mono text-[11px] font-bold uppercase tracking-[0.2em] text-cyber-cyan">

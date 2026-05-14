@@ -9,6 +9,7 @@ This is the Parledev portfolio site built with Next.js, TypeScript, React, and T
 Use trunk-based development with short-lived branches.
 
 - `main` is the production branch and should stay deployable.
+- Before creating a short-lived branch, switch to `main`, pull the latest remote changes with a fast-forward update, then branch from the updated `main`.
 - Use `feature/...` for new sections or visual changes.
 - Use `fix/...` for bug fixes.
 - Use `chore/...` for docs, config, and dependency cleanup.
